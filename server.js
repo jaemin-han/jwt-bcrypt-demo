@@ -10,14 +10,15 @@ const app         = express();
 const bcrypt      = require('bcryptjs');
 const PORT        = process.argv[2] || process.env.port || 3000;
 
+const userRouter = require('./routes/user');
+const apiRouter = require('./routes/api');
+
 app.use(logger('dev'));
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(expressJWT({secret: 'our secret'}).unless({path: ['/user/login', '/user/signup', 'api/stuff']}));
 
-const userRouter = require('./routes/user.js')
-const apiRouter = require('./routes/api.js')
 app.use('/user', userRouter);
 app.use('/api', apiRouter);
 

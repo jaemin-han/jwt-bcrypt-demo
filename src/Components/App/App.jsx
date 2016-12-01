@@ -40,7 +40,7 @@ export default class App extends Component {
     })
     .then(() => {
       console.log('it posted')
-    }),
+    })
     .catch(error => console.log(err))
   }
 

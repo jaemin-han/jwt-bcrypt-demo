@@ -3,13 +3,13 @@ DROP TABLE IF EXISTS secretStuff;
 
 BEGIN;
 
-CREATE TABLE demoUsers(
+CREATE TABLE demoUsers (
   user_id SERIAL PRIMARY KEY,
   username VARCHAR NOT NULL UNIQUE,
   password VARCHAR NOT NULL UNIQUE
 );
 
-CREATE TABLE secretstuff(
+CREATE TABLE secretstuff (
   secret_id SERIAL PRIMARY KEY,
   mySecret VARCHAR NOT NULL,
   myOtherSecret VARCHAR NOT NULL
